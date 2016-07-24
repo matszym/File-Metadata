@@ -8,7 +8,7 @@ fileCtrl = require('./controllers/file.server.controller.js');
 
 app.set('view engine', 'ejs');
 
-app.use('/upload', fileCtrl.processFile, fileCtrl.sendFileSize);
+app.post('/upload', fileCtrl.processFile, fileCtrl.sendFileSize);
 app.use('/', fileCtrl.renderFileForm);
 
 server = app.listen(config.port);
